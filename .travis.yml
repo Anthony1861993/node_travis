@@ -4,5 +4,14 @@ services:
 
 
 script:
-  - docker build -t mannydesigns/node .
-  - docker images mannydesigns/node
+  - docker build -t vincentnguyen/node .
+  - docker images vincentnguyen/node
+
+before_deploy:
+  - docker login -u anthony186 -p Huuhien18
+
+deploy:
+  provider: script
+  script: docker push vincentnguyen/node
+  on:
+    branch: master
