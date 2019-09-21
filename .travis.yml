@@ -3,14 +3,14 @@ services:
   - docker
 
 script:
-  - docker build -t vincentnguyen/node .
-  - docker images vincentnguyen/node
+  - docker build -t anthony186/node .
+  - docker images anthony186/node
 
 before_deploy:
   - docker login -u anthony186 -p Huuhien18
 
 deploy:
   provider: script
-  script: docker push vincentnguyen/node
+  script: docker push anthony186/node
   on:
     branch: master
